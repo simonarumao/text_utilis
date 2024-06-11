@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+Text Utility App
+Overview
+This is a text utility application built with React. It provides various features to manipulate text, including converting to uppercase/lowercase, reversing, replacing, speech synthesis, encryption/decryption, extracting email addresses and URLs, copying, and pasting text.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Convert to Uppercase: Converts the text to uppercase.
+Convert to Lowercase: Converts the text to lowercase.
+Reverse the String: Reverses the order of characters in the text.
+Replace the String: Allows the user to replace specific substrings within the text.
+Speech Synthesis: Converts the text to speech using the browser's SpeechSynthesis API.
+Clear: Clears the text area.
+Encrypt The Text: Encrypts the text using AES encryption.
+Decrypt The Text: Decrypts the encrypted text.
+Extract Emails and URLs: Extracts email addresses and URLs from the text.
+Copy Text: Copies the text to the clipboard.
+Paste Text: Pastes text from the clipboard into the text area.
+Usage
+Converting Text:
 
-## Available Scripts
+Click the "Convert to Uppercase" button to convert text to uppercase.
+Click the "Convert to Lowercase" button to convert text to lowercase.
+Click the "Reverse the String" button to reverse the text.
+Click the "Replace the String" button to replace specific substrings.
+Speech Synthesis:
 
-In the project directory, you can run:
+Click the "Speech" button to hear the text spoken aloud.
+Encryption/Decryption:
 
-### `npm start`
+Enter a text and encryption key.
+Click the "Encrypt The Text" button to encrypt the text.
+Click the "Decrypt The Text" button to decrypt the text.
+Extract Emails and URLs:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Click the "Extract Emails and urls" button to extract email addresses and URLs from the text.
+Clipboard Operations:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Click the "Copy Text" button to copy the text to the clipboard.
+Click the "Paste Text" button to paste text from the clipboard into the text area.
+Installation
+To run the application locally, follow these steps:
 
-### `npm test`
+Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+git clone <repository-url>
+Navigate to the project directory:
 
-### `npm run build`
+bash
+Copy code
+cd text-utility-app
+Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+npm install
+Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+Copy code
+npm start
+Technologies Used
+React
+JavaScript
+CryptoJS
+SpeechSynthesis API
+Clipboard API
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request with any improvements or additional features.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+License
+This project is licensed under the MIT License.
