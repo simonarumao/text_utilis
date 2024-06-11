@@ -74,6 +74,9 @@ Contributions are welcome! Please open an issue or submit a pull request with an
 
     License
     This project is licensed under the MIT License.
+    
+You can copy and paste this Markdown content into your README.md file in your GitHub repository. Ensure to replace `<repository-url>` in the installation section with the actual URL of your repository.
+
 
 
 
