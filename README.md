@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Text Utility App
 To create a README for your text utility application, you can outline its features, functionalities, and how to use them. Below is a template for your README:
@@ -6,6 +7,9 @@ To create a README for your text utility application, you can outline its featur
 To create a README for your text utility application, you can outline its features, functionalities, and how to use them. Below is a template for your README:
 
 
+=======
+*Text Utility App*
+>>>>>>> dfe552bea51d3a2e1ff855042dab08020b3d58b6
 Overview
 This is a text utility application built with React. It provides various features to manipulate text, including converting to uppercase/lowercase, reversing, replacing, speech synthesis, encryption/decryption, extracting email addresses and URLs, copying, and pasting text.
 
