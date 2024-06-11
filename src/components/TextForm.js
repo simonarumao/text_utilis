@@ -45,7 +45,7 @@ export default function TextForm(props) {
       const utterance = new SpeechSynthesisUtterance(text);
       window.speechSynthesis.speak(utterance);
     }else {
-      alert("Sorry, your browser doesn't support text to speech!");
+      alert("Soryry, your browser doesn't support text to speech!");
     }
   }
 
