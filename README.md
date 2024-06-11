@@ -1,4 +1,4 @@
-Text Utility App
+*Text Utility App*
 Overview
 This is a text utility application built with React. It provides various features to manipulate text, including converting to uppercase/lowercase, reversing, replacing, speech synthesis, encryption/decryption, extracting email addresses and URLs, copying, and pasting text.
 
