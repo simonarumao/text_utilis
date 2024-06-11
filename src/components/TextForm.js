@@ -89,6 +89,20 @@ export default function TextForm(props) {
 
   }
 
+  const copyText = () => {
+    navigator.clipboard.writeText(text)
+  }
+
+  const pasteText = () => {
+    navigator.clipboard.readText().then((clipboardText) => {
+      setText(clipboardText);
+
+    }).catch((err) => {
+      console.error("failed to paste",err);
+    });
+    
+  }
+
   
  
  
@@ -118,6 +132,10 @@ export default function TextForm(props) {
           <button className="btn btn-danger mx-3" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
           <button className="btn btn-primary mx-3 my-3" onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
           <button className="btn btn-info mx-3 my-3" onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
+          <button className="btn btn-info mx-3 my-3" onClick={copyText}>Copy Text</button>   
+          <button className="btn btn-info mx-3 my-3" onClick={pasteText}>Paste Text</button>   
+
+
 
 
 
