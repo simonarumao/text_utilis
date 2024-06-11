@@ -69,13 +69,13 @@ To run the application locally, follow these steps:
     SpeechSynthesis API
     Clipboard API
 
-    Contributing
-Contributions are welcome! Please open an issue or submit a pull request with any improvements or additional features.
+   ## Contributing
+   Contributions are welcome! Please open an issue or submit a pull request with any improvements or additional features.
 
-    License
-    This project is licensed under the MIT License.
-    
-You can copy and paste this Markdown content into your README.md file in your GitHub repository. Ensure to replace `<repository-url>` in the installation section with the actual URL of your repository.
+   ## License
+   This project is licensed under the MIT License.
+      
+   You can copy and paste this Markdown content into your README.md file in your GitHub repository. Ensure to replace `<repository-url>` in the installation section with the actual URL of your repository.
 
 
 
