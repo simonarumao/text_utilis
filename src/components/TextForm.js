@@ -16,6 +16,7 @@ export default function TextForm(props) {
 
   const handleOnChange = (event) => {
     setText(event.target.value);
+
   };
 
   const handleKeyChange = (event) => {
@@ -27,14 +28,19 @@ export default function TextForm(props) {
     
       let newtext = text.toUpperCase();
       setText(newtext);
+      props.showAlert("converted to uppercase","warning")
+
   }
   const handleDownClick = () => {
     let newtext = text.toLowerCase();
     setText(newtext);
+    props.showAlert("converted to Lowercase","warning")
+
   }
   const reverseString = () => {
     let newtext = text.split('').reverse().join('')
     setText(newtext);
+
   }
   const replaceString = () => {
     let newtext = text.replace("simonalover","jonathan")
@@ -91,6 +97,8 @@ export default function TextForm(props) {
 
   const copyText = () => {
     navigator.clipboard.writeText(text)
+    props.showAlert("Copyed to clipboard","warning")
+
   }
 
   const pasteText = () => {
@@ -105,62 +113,76 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className="container" style={{color: props.mode === `dark` ? `white`:`black`}}>
-    <div>
-        <div className="mb-3">
+      <div className="container" style={{color: props.mode === `dark` ? `white`:`black`}}>
+        <div>
+            <div className="mb-3">
               <h2>{props.heading}</h2>
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8" style={{
-              backgroundColor: props.mode === `dark` ? `black` : `white`,
-            color: props.mode === `dark` ? `white`:`black`}}></textarea>
-             
-          </div>
+              <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8" style={{
+                backgroundColor: props.mode === `dark` ? `black` : `white`,
+              color: props.mode === `dark` ? `white`:`black`}}></textarea>
+              
+            </div>
 
-          <div className="mb-3 ">
-          <input type="text" value={key} onChange={handleKeyChange} placeholder='enter encryption key'/>
-      
-          </div>
-         
-      <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>  
-          <button className="btn btn-danger mx-3" onClick={handleDownClick}>Convert to lowercase</button> 
-          <button className="btn btn-primary mx-3" onClick={reverseString}>Reverse the string</button>   
-          <button className="btn btn-danger mx-3" onClick={replaceString}>Replace the string</button> 
-          <button className="btn btn-primary mx-3" onClick={speech}>Speech</button>        
-          <button className="btn btn-danger mx-3" onClick={clear}>Clear</button> 
-          <button className="btn btn-primary mx-3" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
-          <button className="btn btn-danger mx-3 my-3" onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
-          <button className="btn btn-primary mx-3 my-3" onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
-          <button className="btn btn-danger mx-3 my-3" onClick={copyText}>Copy Text</button>   
-          <button className="btn btn-primary mx-3 my-3" onClick={pasteText}>Paste Text</button>   
-
-
-
-
-
-
+            <div className="mb-3 ">
+              <input type="text" value={key} onChange={handleKeyChange} placeholder='enter encryption key'/>
+            </div>
+          
+            <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>  
+            <button className="btn btn-danger mx-3" onClick={handleDownClick}>Convert to lowercase</button> 
+            <button className="btn btn-primary mx-3" onClick={reverseString}>Reverse the string</button>   
+            <button className="btn btn-danger mx-3" onClick={replaceString}>Replace the string</button> 
+            <button className="btn btn-primary mx-3" onClick={speech}>Speech</button>        
+            <button className="btn btn-danger mx-3" onClick={clear}>Clear</button> 
+            <button className="btn btn-primary mx-3" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
+            <button className="btn btn-danger mx-3 my-3" onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
+            <button className="btn btn-primary mx-3 my-3" onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
+            <button className="btn btn-danger mx-3 my-3" onClick={copyText}>Copy Text</button>   
+            <button className="btn btn-primary mx-3 my-3" onClick={pasteText}>Paste Text</button>   
+        </div>
       </div>
-      </div>
-      <div className="container  my-4" style={{backgroundColor: props.mode === `dark` ? `black`:`white`,
-     color: props.mode === `dark` ? `white`:`black` }}>
+
+      <div className="container  my-4" style={{backgroundColor: props.mode === `dark` ? `black`:`white`,color: props.mode === `dark` ? `white`:`black` }}>
         <h2>Your Text summary</h2>
         <p>{text.split(" ").length} words and {text.length} characters</p>
         <p>{0.008 * text.length} Minutes Read</p>
-        <h3>Preview</h3>
-        <p>{text}</p>
-        <h3>Extracted Emails:</h3>
-        <ul>
-          {extractedEmails.map((email) => (
-            <li>{email}</li>
-          ))}
-        </ul>
-        <h3>Extracted Urls:</h3>
-        <ul>
-          {extractedUrls.map((url) => (
-            <li>{url}</li>
-          ))}
-        </ul>
+
+        {(text.length > 0) ? 
+          <div>
+            <h3>Preview</h3>
+            <p>{text}</p>
+          </div>
+          :
+          <div></div>
+        }
+
+        {(extractedEmails.length > 0) ?
+          <div>
+              <h3>Extracted Emails:</h3>
+              <ul>
+                {extractedEmails.map((email) => (
+                  <li>{email}</li>
+                ))}
+              </ul>
+          </div>
+          :
+          " "
+        }
+
+        {(extractedUrls.length > 0) ? 
+          <div>
+            <h3>Extracted Urls:</h3>
+            <ul>
+              {extractedUrls.map((url) => (
+                <li>{url}</li>
+              ))}
+            </ul>
+          </div>
+          :
+          " "
+        }
 
         
       </div>
-      </>
+    </>
   )
 }
