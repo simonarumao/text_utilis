@@ -8,8 +8,7 @@ import Alert from './components/Alert';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -55,9 +54,10 @@ function App() {
       <Navbar title="TextUtlities"  mode={Mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-        <Routes>
-          <Route path='/about' element={ <About/>}/>
-          <Route path='/' element = {<TextForm heading="Enter the text" mode={Mode} showAlert={showAlert} /> } />
+          <Routes>
+            {/* exact is used so that react does exact matching and no partially matching is done */}
+          <Route exact path='/about' element={ <About/>}/>
+          <Route exact path='/' element = {<TextForm heading="Enter the text" mode={Mode} showAlert={showAlert} /> } />
         </Routes>
       </div>
         </Router>
