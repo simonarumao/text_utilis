@@ -36,13 +36,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'black'
       showAlert("Dark mode has been enabled", "Success")
-      document.title = 'TextUlitties- Dark Mode'
+      // document.title = 'TextUlitties- Dark Mode'
     }
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white'
       showAlert("Light mode has been enabled", "Success")
-      document.title = 'TextUlitties- light Mode'
+      // document.title = 'TextUlitties- light Mode'
 
 
 
@@ -56,8 +56,8 @@ function App() {
       <div className="container my-3">
           <Routes>
             {/* exact is used so that react does exact matching and no partially matching is done */}
-          <Route exact path='/about' element={ <About/>}/>
-          <Route exact path='/' element = {<TextForm heading="Enter the text" mode={Mode} showAlert={showAlert} /> } />
+          <Route exact path='/about' element={ <About mode={Mode} />}/>
+          <Route exact path='/' element = {<TextForm heading="Try TextUtilis - Word counter, character counter, remove extra spaces" mode={Mode} showAlert={showAlert} /> } />
         </Routes>
       </div>
         </Router>
