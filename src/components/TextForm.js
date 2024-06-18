@@ -128,22 +128,22 @@ export default function TextForm(props) {
             </div>
           
             <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>  
-            <button className="btn btn-danger mx-3" onClick={handleDownClick}>Convert to lowercase</button> 
-            <button className="btn btn-primary mx-3" onClick={reverseString}>Reverse the string</button>   
-            <button className="btn btn-danger mx-3" onClick={replaceString}>Replace the string</button> 
-            <button className="btn btn-primary mx-3" onClick={speech}>Speech</button>        
-            <button className="btn btn-danger mx-3" onClick={clear}>Clear</button> 
-            <button className="btn btn-primary mx-3" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
-            <button className="btn btn-danger mx-3 my-3" onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
-            <button className="btn btn-primary mx-3 my-3" onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
-            <button className="btn btn-danger mx-3 my-3" onClick={copyText}>Copy Text</button>   
-            <button className="btn btn-primary mx-3 my-3" onClick={pasteText}>Paste Text</button>   
+            <button className="btn btn-danger mx-1 my-1" onClick={handleDownClick}>Convert to lowercase</button> 
+            <button className="btn btn-primary mx-1 my-1" onClick={reverseString}>Reverse the string</button>   
+            <button className="btn btn-danger mx-1 my-1" onClick={replaceString}>Replace the string</button> 
+            <button className="btn btn-primary mx-1 my-1" onClick={speech}>Speech</button>        
+            <button className="btn btn-danger mx-1 my-1" onClick={clear}>Clear</button> 
+            <button className="btn btn-primary mx-1 my-1" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
+            <button className="btn btn-danger mx-1 my-1 " onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
+            <button className="btn btn-primary mx-1 my-1 " onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
+            <button className="btn btn-danger mx-1 my-1 " onClick={copyText}>Copy Text</button>   
+            <button className="btn btn-primary mx-1 my-1" onClick={pasteText}>Paste Text</button>   
         </div>
       </div>
 
       <div className="container  my-4" style={{backgroundColor: props.mode === `dark` ? `black`:`white`,color: props.mode === `dark` ? `white`:`black` }}>
         <h2>Your Text summary</h2>
-        <p>{text.split(" ").length} words and {text.length} characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length !== 0}).length} words and {text.length} characters</p>
         <p>{0.008 * text.length} Minutes Read</p>
 
         {(text.length > 0) ? 
