@@ -123,21 +123,21 @@ export default function TextForm(props) {
               
             </div>
 
-            <div className="mb-3 ">
-              <input type="text" value={key} onChange={handleKeyChange} placeholder='enter encryption key'/>
+            <div className="mb-3 mt-2 ">
+            <input type="text" value={key} onChange={handleKeyChange} placeholder='enter encryption key' style={{ padding: "5px", border:"2px solid", borderRadius:"5px"}} />
             </div>
           
-            <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>  
-            <button className="btn btn-danger mx-1 my-1" onClick={handleDownClick}>Convert to lowercase</button> 
-            <button className="btn btn-primary mx-1 my-1" onClick={reverseString}>Reverse the string</button>   
-            <button className="btn btn-danger mx-1 my-1" onClick={replaceString}>Replace the string</button> 
-            <button className="btn btn-primary mx-1 my-1" onClick={speech}>Speech</button>        
-            <button className="btn btn-danger mx-1 my-1" onClick={clear}>Clear</button> 
-            <button className="btn btn-primary mx-1 my-1" onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
-            <button className="btn btn-danger mx-1 my-1 " onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
-            <button className="btn btn-primary mx-1 my-1 " onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
-            <button className="btn btn-danger mx-1 my-1 " onClick={copyText}>Copy Text</button>   
-            <button className="btn btn-primary mx-1 my-1" onClick={pasteText}>Paste Text</button>   
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={handleUpClick}>Convert to uppercase</button>  
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={handleDownClick}>Convert to lowercase</button> 
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={reverseString}>Reverse the string</button>   
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={replaceString}>Replace the string</button> 
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={speech}>Speech</button>        
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={clear}>Clear</button> 
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={encrypText} disabled={encryptedText || !key}>Encrypt The text</button> 
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={decrypText} disabled={!encryptedText || !key}>Decrypt The text</button> 
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={extractEmailsAndUrl}>Extract Emails and urls</button>   
+          <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={copyText}>Copy Text</button>   
+            <button className={`btn btn-${props.mode} mx-1 my-1`} onClick={pasteText}>Paste Text</button>   
         </div>
       </div>
 

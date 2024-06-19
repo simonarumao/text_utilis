@@ -31,27 +31,43 @@ function App() {
 
 
   const toggleMode = () => {
-    if (Mode === 'light')
-    {
+    if (Mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'black'
-      showAlert("Dark mode has been enabled", "Success")
+      showAlert("Dark mode has been enabled", "dark")
       // document.title = 'TextUlitties- Dark Mode'
     }
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white'
-      showAlert("Light mode has been enabled", "Success")
+      showAlert("Light mode has been enabled", "dark")
       // document.title = 'TextUlitties- light Mode'
-
-
-
     }
   }
+
+  // const changeBlue = () => {
+  //     setMode('primary')
+  //     document.body.style.backgroundColor = 'blue'
+  //   }
+
+
+  // const changeGreen = () => {
+  //       setMode('success')
+  //       document.body.style.backgroundColor = 'green'
+    
+  // }
+  // const changeRed = () => {
+  //       setMode('danger')
+  //       document.body.style.backgroundColor = 'red'
+      
+  // }
+     
+
   return (
     <>
       <Router>
-      <Navbar title="TextUtlities"  mode={Mode} toggleMode={toggleMode} />
+      {/* changeBlue = {changeBlue} changeGreen = {changeGreen} changeRed = {changeRed} */}
+      <Navbar title="TextUtlities"  mode={Mode} toggleMode={toggleMode}  />
       <Alert alert={alert} />
       <div className="container my-3">
           <Routes>
