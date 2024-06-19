@@ -35,13 +35,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'black'
       showAlert("Dark mode has been enabled", "dark")
-      // document.title = 'TextUlitties- Dark Mode'
+   
     }
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white'
       showAlert("Light mode has been enabled", "dark")
-      // document.title = 'TextUlitties- light Mode'
+      
     }
   }
 
